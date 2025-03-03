@@ -11,3 +11,11 @@
 Senior.create(name:"gérard", address:"16 villa gaudelet", key_skill:"bricolage", user_id:"1")
 Senior.create(name:"simone", address:"16 villa gaudelet", key_skill:"ufc", user_id:"1")
 Senior.create(name:"georges", address:"16 villa gaudelet", key_skill:"laclasse", user_id:"1")
+
+
+Booking.create(date: "15/06/2025", user_id: 1, senior_id: 3)
+Booking.create(date: "23/06/2025", user_id: 1, senior_id: 3)
+Booking.create(date: "15/06/2025", user_id: 1, senior_id: 2)
+Booking.create(date: "15/06/2025", user_id: 1, senior_id: 1)
+Booking.create(date: "23/06/2025", user_id: 1, senior_id: 1)
+Booking.create(date: "23/07/2025", user_id: 1, senior_id: 1)

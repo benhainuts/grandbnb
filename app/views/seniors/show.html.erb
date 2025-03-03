@@ -2,4 +2,22 @@
   <h1>
     <%=@senior.name%> - <%=@senior.age%> - <%= @senior.key_skill %>
   </h1>
+
+<div>
+<p>
+Upcoming bookings
+</p>
+</div>
+<div>
+  <ul>
+  <%@bookings.each do |booking|%>
+  <li>
+  <%= link_to "Date: #{booking.date} with: #{booking.user.email}"%>
+  </li>
+  <%end%>
+  </ul>
+</div>
+
+<%= link_to "Edit", edit_senior_path%>
+<%= link_to "Back to Results", seniors_path%>
 </div>

@@ -1,5 +1,5 @@
-<h1>hello from new senior</h1>
-
+<h1>hello from edit</h1>
+<div>
 <%= simple_form_for @senior do |f| %>
   <%= f.input :name %>
   <%= f.input :age %>
@@ -7,5 +7,6 @@
   <%= f.input :key_skill %>
   <%= f.button :submit %>
 <% end %>
+</div>
 
-<%= link_to "Cancel", seniors_path%>
+<div><%= link_to "Back to Results", senior_path(params[:id])%></div>
