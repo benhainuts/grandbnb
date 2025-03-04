@@ -1,0 +1,14 @@
+<h1>hello from index</h1>
+
+<div class="container">
+  <ul>
+    <% @seniors.each do |senior| %>
+    <li>
+      <%= link_to "#{senior.name} - #{senior.name} vit à #{senior.address} aime #{senior.key_skill}", senior_path(senior) %>
+    </li>
+    <% end %>
+  </ul>
+  <div>
+  <%= link_to "Create a new senior", new_senior_path %>
+  </div>
+</div>
