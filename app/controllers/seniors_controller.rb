@@ -1,12 +1,12 @@
 class SeniorsController < ApplicationController
-before_action :set_senior, only:[:show, :edit, :update]
+before_action :set_senior, only:[:show]
 
   def index
     @seniors = Senior.all
   end
 
   def show
-    @bookings = @senior.bookings
+    @booking = @senior.bookings.new
   end
 
   def new
@@ -15,24 +15,30 @@ before_action :set_senior, only:[:show, :edit, :update]
 
   def create
     @senior = Senior.new(senior_params)
-    @senior.user_id = User.ids[0]
+    @senior.user = current_user
     if @senior.save
-      redirect_to senior_path(@senior)
+      redirect_to seniors_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def edit
-  end
+  # def
+  #   @booking = Booking.new(senior_id=@senior.id)
 
-  def update
-    if @senior.update(senior_params)
-      redirect_to senior_path(@senior)
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
+  # end
+
+
+  # def edit
+  # end
+
+  # def update
+  #   if @senior.update(senior_params)
+  #     redirect_to senior_path(@senior)
+  #   else
+  #     render :edit, status: :unprocessable_entity
+  #   end
+  # end
 
 private
 

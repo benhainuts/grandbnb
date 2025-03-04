@@ -1,0 +1,36 @@
+=> 
+[[32m#<Booking:0x00007f2c2e0e9ca8[0m
+  id: [34m[1m1[0m,
+  date: Sun, 15 Jun 2025,
+  user_id: [34m[1m1[0m,
+  senior_id: [34m[1m3[0m,
+  created_at: Mon, 03 Mar 2025 20:16:30.169072000 UTC +00:00,
+  updated_at: Mon, 03 Mar 2025 20:16:30.169072000 UTC +00:00[32m>[0m,
+ [32m#<Booking:0x00007f2c2e2b5c80[0m
+  id: [34m[1m2[0m,
+  date: Sun, 15 Jun 2025,
+  user_id: [34m[1m1[0m,
+  senior_id: [34m[1m1[0m,
+  created_at: Mon, 03 Mar 2025 20:16:41.875703000 UTC +00:00,
+  updated_at: Mon, 03 Mar 2025 20:16:41.875703000 UTC +00:00[32m>[0m,
+ [32m#<Booking:0x00007f2c2e2b5a00[0m
+  id: [34m[1m3[0m,
+  date: Sun, 15 Jun 2025,
+  user_id: [34m[1m1[0m,
+  senior_id: [34m[1m2[0m,
+  created_at: Mon, 03 Mar 2025 20:16:47.916261000 UTC +00:00,
+  updated_at: Mon, 03 Mar 2025 20:16:47.916261000 UTC +00:00[32m>[0m,
+ [32m#<Booking:0x00007f2c2e2b58c0[0m
+  id: [34m[1m4[0m,
+  date: Sun, 15 Jun 2025,
+  user_id: [34m[1m1[0m,
+  senior_id: [34m[1m3[0m,
+  created_at: Mon, 03 Mar 2025 20:16:56.356296000 UTC +00:00,
+  updated_at: Mon, 03 Mar 2025 20:16:56.356296000 UTC +00:00[32m>[0m,
+ [32m#<Booking:0x00007f2c2e2b5640[0m
+  id: [34m[1m5[0m,
+  date: Wed, 23 Jul 2025,
+  user_id: [34m[1m1[0m,
+  senior_id: [34m[1m1[0m,
+  created_at: Tue, 04 Mar 2025 10:13:21.747013000 UTC +00:00,
+  updated_at: Tue, 04 Mar 2025 10:13:21.747013000 UTC +00:00[32m>[0m]

@@ -5,19 +5,13 @@
 
 <div>
 <p>
-Upcoming bookings
-</p>
-</div>
-<div>
-  <ul>
-  <%@bookings.each do |booking|%>
-  <li>
-  <%= link_to "Date: #{booking.date} with: #{booking.user.email}"%>
-  </li>
-  <%end%>
-  </ul>
+
+<div class="container">
+  <%= simple_form_for [@senior, @booking] do |f| %>
+   <%= f.input :date %>
+  <%= f.submit "Book a date", class: "btn btn-primary" %>
+<% end %>
 </div>
 
-<%= link_to "Edit", edit_senior_path%>
 <%= link_to "Back to Results", seniors_path%>
 </div>
