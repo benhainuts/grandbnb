@@ -1,0 +1,30 @@
+<h1>My dashboard</h1>
+
+<div>
+<div>
+<h2>My seniors</h2>
+<ul>
+<% @seniors.each do |senior|%>
+<li>
+<%= link_to senior.name, senior_path(senior)%>
+</li>
+<%end%>
+</ul>
+</div>
+
+<div>
+<h2>My upcoming bookings</h2>
+<ul>
+<% @bookings.each do |booking|%>
+<li>
+<%= booking.date%>
+</li>
+<%end%>
+</div>
+
+<div>
+<%= link_to "Go to seniors", seniors_path%>
+</div>
+
+
+</div>
