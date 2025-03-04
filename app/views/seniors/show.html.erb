@@ -3,6 +3,10 @@
     <%=@senior.name%> - <%=@senior.age%> - <%= @senior.key_skill %>
   </h1>
 
+  <div>
+    <%= cl_image_tag @senior.photo.key, height: 300, width: 400, crop: :fill %>
+  </div>
+
 <div class="container">
   <%= simple_form_for [@senior, @booking] do |f| %>
    <%= f.input :date,

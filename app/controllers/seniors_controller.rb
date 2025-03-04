@@ -1,7 +1,6 @@
 class SeniorsController < ApplicationController
 before_action :set_senior, only:[:show]
 
-
   def index
     @seniors = Senior.all
   end
@@ -24,10 +23,6 @@ before_action :set_senior, only:[:show]
     end
   end
 
-  # def
-  #   @booking = Booking.new(senior_id=@senior.id)
-
-  # end
 
 
   # def edit
@@ -48,6 +43,6 @@ private
   end
 
   def senior_params
-    params.require(:senior).permit(:name, :age, :address, :key_skill)
+    params.require(:senior).permit(:name, :age, :address, :key_skill, :photo)
   end
 end
