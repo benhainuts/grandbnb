@@ -8,20 +8,23 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Senior.create(name:"Gérard", address:"16 villa gaudelet", city: "paris", key_skill:"bricolage", user_id:"1")
-Senior.create(name:"simone", address:"16 villa gaudelet", city: "paris", key_skill:"ufc", user_id:"1")
-Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1")
-Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1")
-Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1")
-Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1")
-Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1")
-Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1")
-Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1")
+puts "creation des seniors"
+Senior.create(name:"Gérard", address:"16 villa gaudelet", city: "paris", key_skill:"bricolage", user_id:"1", age:74, photo:"")
+Senior.create(name:"Simone", address:"16 villa gaudelet", city: "paris", key_skill:"ufc", user_id:"1", age:74, photo:"")
+Senior.create(name:"Gautier", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1", age:74, photo:"")
+Senior.create(name:"Sylvie", address:"16 villa gaudelet", city: "paris", key_skill:"krav maga", user_id:"1", age:74, photo:"")
+Senior.create(name:"Geargette", address:"16 villa gaudelet", city: "paris", key_skill:"street fighter", user_id:"1", age:74, photo:"")
+Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"cusine", user_id:"1", age:74, photo:"")
+Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"balades en foret", user_id:"1", age:74, photo:"")
+Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"course a pied", user_id:"1", age:74, photo:"")
+Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1", age:74, photo:"")
+puts 'création des seniors finie'
 
-
-Booking.create(date: "15/06/2025", user_id: 1, senior_id: 3)
-Booking.create(date: "23/06/2025", user_id: 1, senior_id: 3)
-Booking.create(date: "15/06/2025", user_id: 1, senior_id: 2)
-Booking.create(date: "15/06/2025", user_id: 1, senior_id: 1)
-Booking.create(date: "23/06/2025", user_id: 1, senior_id: 1)
-Booking.create(date: "23/07/2025", user_id: 1, senior_id: 1)
+puts "crea des rdv"
+Booking.create(date: "15/06/2025", user_id: 1, senior_id: 3, datetime:"2025-03-28 23:45:00 UTC")
+Booking.create(date: "23/06/2025", user_id: 1, senior_id: 3, datetime:"2025-03-28 23:45:00 UTC")
+Booking.create(date: "15/06/2025", user_id: 1, senior_id: 2, datetime:"2025-03-28 23:45:00 UTC")
+Booking.create(date: "15/06/2025", user_id: 1, senior_id: 1, datetime:"2025-03-28 23:45:00 UTC")
+Booking.create(date: "23/06/2025", user_id: 1, senior_id: 1, datetime:"2025-03-28 23:45:00 UTC")
+Booking.create(date: "23/07/2025", user_id: 1, senior_id: 1, datetime:"2025-03-28 23:45:00 UTC")
+puts "rdv créés"
