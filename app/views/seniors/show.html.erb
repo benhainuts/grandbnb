@@ -5,7 +5,9 @@
 
 <div class="container">
   <%= simple_form_for [@senior, @booking] do |f| %>
-   <%= f.input :date %>
+   <%= f.input :date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
   <%= f.submit "Book a date", class: "btn btn-primary" %>
 <% end %>
 </div>
