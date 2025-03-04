@@ -6,7 +6,7 @@
 <ul>
 <% @seniors.each do |senior|%>
 <li>
-<%= link_to senior.name, senior_path(senior)%>
+<%= link_to senior.name, senior_path(senior) %>
 </li>
 <%end%>
 </ul>
@@ -15,11 +15,11 @@
 <div>
 <h2>My upcoming bookings</h2>
 <ul>
-<% @bookings.each do |booking|%>
+<% @bookings.each do |booking| %>
 <li>
-<%= booking.date%>
+<%= booking.date %>
 </li>
-<%end%>
+<% end %>
 </div>
 
 <div>
