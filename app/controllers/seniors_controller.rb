@@ -1,6 +1,7 @@
 class SeniorsController < ApplicationController
 before_action :set_senior, only:[:show]
 
+
   def index
     @seniors = Senior.all
   end
