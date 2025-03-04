@@ -8,9 +8,15 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Senior.create(name:"gérard", address:"16 villa gaudelet", key_skill:"bricolage", user_id:"1")
-Senior.create(name:"simone", address:"16 villa gaudelet", key_skill:"ufc", user_id:"1")
-Senior.create(name:"georges", address:"16 villa gaudelet", key_skill:"laclasse", user_id:"1")
+Senior.create(name:"Gérard", address:"16 villa gaudelet", city: "paris", key_skill:"bricolage", user_id:"1")
+Senior.create(name:"simone", address:"16 villa gaudelet", city: "paris", key_skill:"ufc", user_id:"1")
+Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1")
+Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1")
+Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1")
+Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1")
+Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1")
+Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1")
+Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1")
 
 
 Booking.create(date: "15/06/2025", user_id: 1, senior_id: 3)
