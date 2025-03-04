@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   resources :seniors, only: [:index, :show, :new, :create] do
     resources :bookings, only: [:create]
   end
+
+  get "/dashboard", to: "pages#dashboard"
+
 end
