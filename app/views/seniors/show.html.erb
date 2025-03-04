@@ -3,9 +3,6 @@
     <%=@senior.name%> - <%=@senior.age%> - <%= @senior.key_skill %>
   </h1>
 
-<div>
-<p>
-
 <div class="container">
   <%= simple_form_for [@senior, @booking] do |f| %>
    <%= f.input :date %>
