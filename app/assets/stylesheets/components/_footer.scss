@@ -1,0 +1,52 @@
+/* Style pour le footer */
+
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  display: grid;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex; /* Affiche les 3 sections sur une même ligne */
+  justify-content: space-between;
+  flex-wrap: wrap;  /* Pour le responsive */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;  /* Chaque section occupe une même proportion de la largeur */
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-section h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-section ul.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-section ul.social-links li {
+  display: inline;
+}
