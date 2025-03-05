@@ -7,6 +7,6 @@ class Senior < ApplicationRecord
   validates :age, presence: true
   validates :key_skill, presence: true
   validates :address, presence:true
-  validates :city, presence:true
+
 
 end
