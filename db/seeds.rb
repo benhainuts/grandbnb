@@ -81,11 +81,6 @@ pascal = Senior.create!(name:"Pascal", address:"1 avenue de la republique", city
 file = URI.parse("https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an_elderly_person_aged_between_65_and_90_performing_a_karate_jump_xfotv5.jpg").open
 pascal.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 pascal.save
-# seniors << {name:"Marie", address:"1 avenue de la republique", city: "Paris", key_skill:"cuisine", user_id:2, age:82, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an_elderly_person_aged_between_65_and_90_performing_a_karate_jump_xfotv5.jpg"}
-# seniors << {name:"Sofia", address:"1 avenue de la republique", city: "Marseille", key_skill:"cuisine", user_id:3, age:91, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741180126/photo_dune_dame_agee_qui_lit_v3jmb3.jpg"}
-# seniors << {name:"Mireille", address:"1 avenue de la republique", city: "Aubervilliers", key_skill:"street fighter", user_id:2, age:69, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741179113/development/pdqrz5x48mdrtej7rv3z7g6pwkto.jpg"}
-# seniors << {name:"Michel", address:"1 avenue de la republique", city: "Paris", key_skill:"clubber", user_id:4, age:84, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741178467/development/8i03se587yot92q3fhvecesngzeb.jpg"}
-# seniors << {name:"Pascal", address:"1 avenue de la republique", city: "Argenteuil", key_skill:"cuisine", user_id:4, age:74, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an_elderly_person_aged_between_65_and_90_performing_a_karate_jump_xfotv5.jpg"}
 
 # def add_a_senior(senior)
 #   file = URI.parse(senior[:photo_url]).open
