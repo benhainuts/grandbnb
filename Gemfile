@@ -52,6 +52,7 @@ gem "sassc-rails"
 
 gem "devise"
 
+
 group :development, :test do
   gem "dotenv-rails"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -74,3 +75,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "cloudinary", "~> 2.3"
