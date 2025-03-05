@@ -8,6 +8,10 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+
+####DELETE AVANT
+
+
 puts "creation des seniors"
 Senior.create(name:"Gérard", address:"16 villa gaudelet", city: "paris", key_skill:"bricolage", user_id:"1", age:74, photo:"")
 Senior.create(name:"Simone", address:"16 villa gaudelet", city: "paris", key_skill:"ufc", user_id:"1", age:74, photo:"")

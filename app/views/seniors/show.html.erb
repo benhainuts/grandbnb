@@ -24,6 +24,11 @@
   <%= f.submit "Book a date", class: "btn btn-primary" %>
 <% end %>
 
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 <div class="retour">
 <%= link_to "Retour aux résultats", seniors_path%>
 </div>
