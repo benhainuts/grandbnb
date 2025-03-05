@@ -4,7 +4,11 @@
   </h1>
 
   <div>
+  <% if @senior.photo.present? %>
     <%= cl_image_tag @senior.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <p>No photo available</p>
+  <% end %>
   </div>
 
 <div class="container">
