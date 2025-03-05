@@ -1,3 +1,4 @@
+
 <div class="container">
   <h1>
     <%=@senior.name%> - <%=@senior.age%> - <%= @senior.key_skill %>
@@ -18,7 +19,10 @@
             input_html: { data: { controller: "datetimepicker" } } %>
   <%= f.submit "Book a date", class: "btn btn-primary" %>
 <% end %>
+<div class="retour">
+<%= link_to "Retour aux résultats", seniors_path%>
 </div>
-
-<%= link_to "Back to Results", seniors_path%>
+<div style="height: 300px">
+</div>
+</div>
 </div>
