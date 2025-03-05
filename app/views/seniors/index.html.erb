@@ -1,21 +1,21 @@
-
-
-<h1>hello from index</h1>
+<!-- <h1>Liste des Seniors</h1> -->
 
 <div class="container">
-
-<div class="card-senior">
-  <ul>
+  <div class="row">
     <% @seniors.each do |senior| %>
-    <li>
-      <%= link_to "#{senior.name} - #{senior.name} vit à #{senior.city} aime #{senior.key_skill}", senior_path(senior) %>
-    </li>
+      <%= link_to senior_path(senior), class: "card-senior" do %>
+        <img src="<%= %>" alt="Photo de <%= senior.name %>">
+        <div class="card-senior-infos">
+          <h2><%= senior.name %></h2>
+          <p><strong>Ville :</strong> <%= senior.city %></p>
+          <p><strong>Âge :</strong> <%= senior.age %> ans</p>
+          <p><strong>Skill :</strong> <%= senior.key_skill %></p>
+        </div>
+      <% end %>
     <% end %>
-  </ul>
   </div>
 
-
-<div>
-  <%= link_to "Create a new senior", new_senior_path %>
+  <div class="new-senior-link">
+    <%= link_to "Créer un nouveau senior", new_senior_path, class: "btn btn-primary" %>
   </div>
 </div>
