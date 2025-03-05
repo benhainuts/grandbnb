@@ -1,18 +1,22 @@
-.container {
-  width: 50%;
-  max-width: 1400px;
-  padding-top: 50px;
-  };
+// .container {
+//   width: 90%;
+//   max-width: 1400px;
+//   padding-top: 50px;
+//   };
 
-  .retour {
-  padding-top: 10px;
-}
+//   .retour {
+//   padding-top: 10px;
+// }
 
-.senior-container {
-  width: 400px;
-  margin: auto;
-  text-align: center;
-}
+// .map-container {
+//   width: 40%;
+// }
+
+// .senior-container {
+//   width: 400px;
+//   margin: auto;
+//   text-align: center;
+// }
 
 
 .retour a {
@@ -20,6 +24,44 @@
   color: black;
 }
 
-.p {
-  color:red
+// .p {
+//   color:red
+// }
+
+// .container {
+//   width: 90%;
+//   max-width: 1400px;
+//   padding-top: 50px;
+//   display: flex;
+//   flex-direction: row; /* Affichage en ligne (horizontalement) */
+//   justify-content: center; /* Centre les éléments horizontalement */
+//   align-items: center; /* Aligne les éléments verticalement */
+//   gap: 20px; /* Ajoute un espace entre les blocs */
+// }
+
+// .map-container {
+//   width: 60%; /* Ajuste la taille de la carte */
+//   height: 500px; /* Ajuste la hauteur */
+// }
+
+// .senior-container {
+//   width: 400px;
+//   text-align: center;
+// }
+
+.container {
+  display: flex; flex-direction: row;
+
+
+
+}
+
+.senior-card {
+  width: 40%;
+  margin: auto;
+  text-align: center;
+}
+
+.map {
+  width: 40%;
 }
