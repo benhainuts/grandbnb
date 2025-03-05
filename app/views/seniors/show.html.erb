@@ -1,24 +1,29 @@
 
 <div class="container">
+<div class="senior-container">
   <h1>
-    <%=@senior.name%> - <%=@senior.age%> - <%= @senior.key_skill %>
+    <%=@senior.name%> - <%=@senior.age%>
   </h1>
 
-  <div>
+  <h2>
+    <i class="fa-solid fa-heart"></i>
+      <%= @senior.key_skill %>
+    <i class="fa-solid fa-heart"></i>
+  </h2>
+
   <% if @senior.photo.present? %>
     <%= cl_image_tag @senior.photo.key, height: 300, width: 400, crop: :fill %>
   <% else %>
     <p>No photo available</p>
   <% end %>
-  </div>
 
-<div class="container">
   <%= simple_form_for [@senior, @booking] do |f| %>
    <%= f.input :datetime,
             as: :string,
             input_html: { data: { controller: "datetimepicker" } } %>
   <%= f.submit "Book a date", class: "btn btn-primary" %>
 <% end %>
+
 <div class="retour">
 <%= link_to "Retour aux résultats", seniors_path%>
 </div>
