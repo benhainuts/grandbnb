@@ -1,7 +1,7 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to "/dashboard", class: "navbar-brand" do %>
       <%= image_tag "mamielogo.png" %>
     <% end %>
 
@@ -16,8 +16,14 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
+           <li class="nav-item active">
+            <div class="new-senior-link">
+              <%= link_to "Créer un nouveau senior", new_senior_path, class: "btn btn-primary" %>
+            </div>
+          </li>
+
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", "/dashboard", class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
