@@ -8,7 +8,7 @@ def create
 
   if @booking.save
 
-    redirect_to @senior, notice: 'Booking added successfully!'
+    redirect_to dashboard_path, notice: 'Booking added successfully!'
   else
     render 'seniors/show', status: :unprocessable_entity
   end

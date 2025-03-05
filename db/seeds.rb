@@ -30,13 +30,13 @@ file = URI.parse("https://res.cloudinary.com/dqxytjasr/image/upload/v1741180474/
 simone.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 simone.save
 # seniors << {name:"Marcel", address:"1 avenue de la republique", city: "Le Kremlin bicetre", key_skill:"cuisine", user_id:1, age:84, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an_elderly_person_male_or_female_between_65_and_90_years_old_engaging_in_a_sporting_activity_a2ciqm.jpg"}
-marcel = Senior.create!(name:"Marcel", address:"1 avenue de la republique", city: "Le Kremlin bicetre", key_skill:"cuisine", user: sami, age:84)
+marcel = Senior.create!(name:"Marcel", address:"1 avenue de la republique", city: "Le Kremlin bicetre", key_skill:"sport", user: sami, age:84)
 file = URI.parse("https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an_elderly_person_male_or_female_between_65_and_90_years_old_engaging_in_a_sporting_activity_a2ciqm.jpg").open
 marcel.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 marcel.save
 # seniors << {name:"Jeanne", address:"1 avenue de la republique", city: "Paris", key_skill:"danse", user_id:1, age:78, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an
 jeanne = Senior.create!(name:"Jeanne", address:"1 avenue de la republique", city: "Paris", key_skill:"danse", user: sami, age:78)
-file = URI.parse("https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an_elderly_person_aged_between_65_and_90_performing_a_karate_jump_xfotv5.jpg").open
+file = URI.parse("https://media.istockphoto.com/id/1448395809/fr/photo/une-femme-%C3%A2g%C3%A9e-dansant-avec-ses-amis-dans-une-salle-de-danse.jpg?s=1024x1024&w=is&k=20&c=cNssjIx2f2thTicTMj3YRIXyVbqOTN32c5uWTv3QmWQ=").open
 jeanne.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 jeanne.save
 
@@ -48,12 +48,12 @@ roger.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 roger.save
 # seniors << {name:"Marie", address:"1 avenue de la republique", city: "Paris", key_skill:"cuisine", user_id:2, age:82, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an_elderly_person_aged_between_65_and_90_performing_a_karate_jump_xfotv5.jpg"}
 marie = Senior.create!(name:"Marie", address:"1 avenue de la republique", city: "Paris", key_skill:"cuisine", user: juliette, age:82)
-file = URI.parse("https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an_elderly_person_aged_between_65_and_90_performing_a_karate_jump_xfotv5.jpg").open
+file = URI.parse("https://media.istockphoto.com/id/500674888/fr/photo/femme-%C3%A2g%C3%A9e-faire-cuire-au-four.jpg?s=1024x1024&w=is&k=20&c=LJthipiDkOitFuQ-p0z8_DZ-qipzvA9asXcyDT4rPUg=").open
 marie.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 marie.save
 # seniors << {name:"Armand", address:"11 rue Barye", city: "Paris", key_skill:"judo", user_id:2, age:70, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171605/an_elderly_person_male_or_female_between_65_and_90_years_old_engaging_in_an_activity_t2k34j.jpg"}
 armand = Senior.create!(name:"Armand", address:"11 rue Barye", city: "Paris", key_skill:"judo", user: juliette, age:70)
-file = URI.parse("https://res.cloudinary.com/dqxytjasr/image/upload/v1741171605/an_elderly_person_male_or_female_between_65_and_90_years_old_engaging_in_an_activity_t2k34j.jpg").open
+file = URI.parse("https://media.istockphoto.com/id/485696308/fr/photo/joyeux-senior-dans-un-kimono-blanc-blanc-avec-une-ceinture.jpg?s=1024x1024&w=is&k=20&c=vVVT5DLW5LyxIKem35u57ODurEFYjfobjasCvO00hyc=").open
 armand.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 armand.save
 # seniors << {name:"Liliane", address:"1 avenue de la republique", city: "Saint-Ouen", key_skill:"danse", user_id:3, age:75, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/plan_buste_dune_personne_agee_homme_ou_femme_entre_65_et_90_ans_1_nolui5.jpg"}
@@ -77,7 +77,7 @@ file = URI.parse("https://res.cloudinary.com/dqxytjasr/image/upload/v1741178467/
 michel.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 michel.save
 # seniors << {name:"Pascal", address:"1 avenue de la republique", city: "Argenteuil", key_skill:"cuisine", user_id:4, age:74, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an_elderly_person_aged_between_65_and_90_performing_a_karate_jump_xfotv5.jpg"}
-pascal = Senior.create!(name:"Pascal", address:"1 avenue de la republique", city: "Argenteuil", key_skill:"cuisine", user: benoit, age:74)
+pascal = Senior.create!(name:"Pascal", address:"1 avenue de la republique", city: "Argenteuil", key_skill:"la bagarre", user: benoit, age:74)
 file = URI.parse("https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an_elderly_person_aged_between_65_and_90_performing_a_karate_jump_xfotv5.jpg").open
 pascal.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 pascal.save
