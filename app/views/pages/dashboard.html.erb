@@ -47,14 +47,24 @@
             <p><strong>Skill:</strong> <%= senior.key_skill %></p>
              <p>Rendez-vous à valider</p>
             <ul>
-            <% senior.bookings.where(status: "à confirmer").each do |booking|%>
-              <li><%=booking.datetime.strftime("%B %d, %Y at %I:%M %p")%> avec <%=booking.user.email%> - <%=link_to "Confirmer", senior_booking_path(booking.senior, booking) %></li>
-            <% end %>
+            <%sbac = senior.bookings.where(status: "à confirmer").where("datetime > ?", Time.now) %>
+            <% if sbac.count == 0%>
+               Pas de rendez vous à confirmer
+            <% else%>
+              <% sbac.each do |booking|%>
+                <li><%=booking.datetime.strftime("%B %d, %Y at %I:%M %p")%> avec <%=booking.user.email%> - <%=link_to "Confirmer", senior_booking_path(booking.senior, booking) %></li>
+              <% end %>
+            <%end%>
             </ul>
             <p>Rendez-vous à venir</p>
             <ul>
-            <%senior.bookings.where(status: "Confirmé").each do |booking|%>
-              <li><%=booking.datetime.strftime("%B %d, %Y at %I:%M %p")%> avec <%=booking.user.email%></li>
+            <%sbav = senior.bookings.where(status: "Confirmé").where("datetime > ?", Time.now) %>
+            <% if sbav.count == 0%>
+               Pas de rendez vous à venir
+            <% else%>
+              <%sbav.each do |booking|%>
+                <li><%=booking.datetime.strftime("%B %d, %Y at %I:%M %p")%> avec <%=booking.user.email%></li>
+              <% end %>
             <% end %>
             </ul>
           </div>
