@@ -1,7 +1,36 @@
 
 <!-- Seniors Section -->
 <div class="container">
-  <h2>Mes seniors</h2>
+
+<!-- Upcoming Bookings Section -->
+<div class="container">
+  <h2>Mes rendez vous</h2>
+<div>
+  <h3>Mes rendez-vous à confirmer</h3>
+  <ul>
+    <% @bookings_to_be_confirmed.each do |booking| %>
+      <li>
+      <%= link_to "#{booking.datetime.strftime("%B %d, %Y at %I:%M %p")} avec #{booking.senior.name} à #{booking.senior.city}, #{booking.senior.address}", senior_booking_path(booking.senior, booking) %> ||
+      <%=booking.status%>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div>
+  <h3>Mes rendez-vous prévus</h3>
+  <ul>
+    <% @bookings_accepted.each do |booking| %>
+      <li>
+      <%= link_to "#{booking.datetime.strftime("%B %d, %Y at %I:%M %p")} avec #{booking.senior.name} a #{booking.senior.city}, #{booking.senior.address}", senior_booking_path(booking.senior, booking) %> ||
+      <%=booking.status%>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+
+<!-- my Seniors Section -->
+<h2>Mes seniors</h2>
   <div class="row">
     <% @seniors.each do |senior| %>
       <div class="card-dashboard">
@@ -16,6 +45,18 @@
             <p><strong>Age:</strong> <%= senior.age %></p>
             <p><strong>City:</strong> <%= senior.city %></p>
             <p><strong>Skill:</strong> <%= senior.key_skill %></p>
+             <p>Rendez-vous à valider</p>
+            <ul>
+            <% senior.bookings.where(status: "à confirmer").each do |booking|%>
+              <li><%=booking.datetime.strftime("%B %d, %Y at %I:%M %p")%> avec <%=booking.user.email%> - <%=link_to "Confirmer", senior_booking_path(booking.senior, booking) %></li>
+            <% end %>
+            </ul>
+            <p>Rendez-vous à venir</p>
+            <ul>
+            <%senior.bookings.where(status: "Confirmé").each do |booking|%>
+              <li><%=booking.datetime.strftime("%B %d, %Y at %I:%M %p")%> avec <%=booking.user.email%></li>
+            <% end %>
+            </ul>
           </div>
         <% end %>
       </div>
@@ -24,26 +65,10 @@
 </div>
 </div>
 
-<!-- Upcoming Bookings Section -->
-<div class="container">
-  <h2>Mes réservations</h2>
-  <ul>
-    <% @bookings.each do |booking| %>
-      <li><%= booking.datetime.strftime("%B %d, %Y at %I:%M %p") %></li>
-    <% end %>
-  </ul>
-</div>
-
 <!-- Navigation Link -->
 <div class="container dashboard-link">
   <%= link_to "Retour aux seniors", seniors_path, class: "btn btn-primary" %>
 </div>
 
-<<<<<<< HEAD
-
-</div>
-<div style="height: 300px">
-=======
 <!-- Extra spacing -->
 <div style="height: 300px;"></div>
->>>>>>> master
