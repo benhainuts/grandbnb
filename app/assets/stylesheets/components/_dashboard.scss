@@ -4,7 +4,7 @@
 //   padding-top: 50px;
 //   };
 
-  .retour {
+.retour {
   padding-top: 10px;
 }
 
@@ -29,17 +29,23 @@
 }
 
 h1, h2 {
+  margin-top: 20px;
   text-align: center;
   color: #333;
 }
 
-/* Grid Layout for Cards */
-.row {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  justify-items: center;
+ h3 {
+  margin-top: 20px;
+  color: #333;
 }
+
+/* Grid Layout for Cards */
+// .row {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+//   gap: 20px;
+//   justify-items: center;
+// }
 
 /* Dashboard Card Styles */
 .card-dashboard {
@@ -71,7 +77,7 @@ h1, h2 {
 /* Image Styling */
 .card-dashboard img {
   width: 100%;
-  height: 200px;
+  height: 100px;
   object-fit: cover;
 }
 
@@ -84,12 +90,14 @@ h1, h2 {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
+  list-style-type: none;
 }
 
 .card-dashboard p {
   font-size: 14px;
   margin: 5px 0;
   color: #555;
+  list-style-type: none;
 }
 
 /* Link Style for Navigation */
@@ -102,6 +110,97 @@ h1, h2 {
     text-decoration: underline;
   }
 }
+
+/* My senior Style */
+/* Grid Layout for Cards */
+.row-mybookings {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+/* Dashboard Card Styles */
+.card-mysenior-dashboard {
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  margin: 10px 0;
+
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.card-mysenior-dashboard-first-col {
+  width : 30%;
+  flex: 1 1 auto;
+}
+
+.card-mysenior-dashboard-second-col {
+  width : 20%;
+  padding-left: 5px;
+  padding-top: 5px;
+  flex: 1 1 auto;
+}
+
+.card-mysenior-dashboard-third-col {
+  width : 70%;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  flex: 1 1 auto;
+  list-style-type: none;
+
+}
+
+.card-mysenior-dashboard-third-col p {
+ font-size: 12px;
+ list-style-type: none;
+}
+
+/* Link covers entire card */
+.card-mysenior-dashboard-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Image Styling */
+.card-mysenior-dashboard img {
+  width: 100%;
+  // height: 300px;
+object-fit: contain;
+object-position: center;
+}
+
+/* Card Info Styling */
+.card-mysenior-dashboard-infos {
+  padding: 15px;
+}
+
+.card-mysenior-dashboard h2 {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-mysenior-dashboard p {
+  font-size: 12px;
+  margin: 10px 0;
+  color: #555;
+}
+
+
 
 /* Responsive Design */
 @media screen and (max-width: 1024px) {
