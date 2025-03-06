@@ -1,0 +1,32 @@
+<div class="container">
+<div class="senior-container">
+  <h1>
+    le <%=@booking.datetime%>
+    entre <%=@senior.name%> et <%=@booking.user.email%>
+  </h1>
+
+  <h2>
+      au <%= @senior.address %>, à <%= @senior.city %>
+  </h2>
+
+  <p>Passion de <%=@senior.name%>: <%=@senior.key_skill%></p>
+
+  <% if @senior.photo.present? %>
+    <%= cl_image_tag @senior.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <p>No photo available</p>
+  <% end %>
+
+  <div>
+  Statut du rendez-vous : <%=@booking.status%>
+  <%= link_to "Confirmer/annuler le rendez-vous", edit_senior_booking_path(@booking.senior, @booking), class: "btn btn-primary" %>
+  </div>
+
+
+
+
+<div class="retour">
+<%= link_to "Retour", dashboard_path%>
+ </div>
+  </div>
+   </div>

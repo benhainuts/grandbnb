@@ -52,7 +52,7 @@ file = URI.parse("https://media.istockphoto.com/id/500674888/fr/photo/femme-%C3%
 marie.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 marie.save
 # seniors << {name:"Armand", address:"11 rue Barye", city: "Paris", key_skill:"judo", user_id:2, age:70, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171605/an_elderly_person_male_or_female_between_65_and_90_years_old_engaging_in_an_activity_t2k34j.jpg"}
-armand = Senior.create!(name:"Armand", address:"11 rue Barye", city: "Paris", key_skill:"judo", user: juliette, age:70)
+armand = Senior.create!(name:"Armand", address:"11 rue Barye", city: "Paris", key_skill:"judo", user: juliette, age:7)
 file = URI.parse("https://media.istockphoto.com/id/485696308/fr/photo/joyeux-senior-dans-un-kimono-blanc-blanc-avec-une-ceinture.jpg?s=1024x1024&w=is&k=20&c=vVVT5DLW5LyxIKem35u57ODurEFYjfobjasCvO00hyc=").open
 armand.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 armand.save
