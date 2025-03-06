@@ -3,8 +3,14 @@ before_action :set_senior, only:[:show]
 
   def index
     @seniors = Senior.all
-    # The `geocoded` scope filters only flats with coordinates
-
+    @markers = @seniors.geocoded.map do |senior|
+      {
+        lat: senior.latitude,
+        lng: senior.longitude,
+        info_window_html: render_to_string(partial: "info_window2", locals: {senior: senior}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
   end
 
   def show

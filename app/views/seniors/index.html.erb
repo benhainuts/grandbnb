@@ -1,23 +1,28 @@
 <!-- <h1>Liste des Seniors</h1> -->
 
-<div class="container">
-  <div class="row">
-    <% @seniors.each do |senior| %>
-      <%= link_to senior_path(senior), class: "card-senior" do %>
-        <%= cl_image_tag senior.photo.key, height: 300, width: 400, crop: :fill %>
-        <div class="card-senior-infos">
-          <h2><%= senior.name %></h2>
-          <p><strong>Ville :</strong> <%= senior.city %></p>
-          <p><strong>Âge :</strong> <%= senior.age %> ans</p>
-          <p><strong>Skill :</strong> <%= senior.key_skill %></p>
-        </div>
+<div class="container-index d-flex">
+  <div class="senior-wrap">
+    <div class="row w-100 d-flex">
+      <% @seniors.each do |senior| %>
+        <%= link_to senior_path(senior), class: "card-senior" do %>
+          <%= cl_image_tag senior.photo.key, height: 300, width: 400, crop: :fill %>
+          <div class="card-senior-infos">
+            <h2><%= senior.name %></h2>
+            <p><strong>Ville :</strong> <%= senior.city %></p>
+            <p><strong>Âge :</strong> <%= senior.age %> ans</p>
+            <p><strong>Skill :</strong> <%= senior.key_skill %></p>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
-  </div>
+    </div>
+    </div>
 
-  <div class="new-senior-link">
-    <%= link_to "Créer un nouveau senior", new_senior_path, class: "btn btn-primary" %>
-  </div>
-</div>
-<div style="height: 300px">
+
+    <div class="map-container-index">
+      <div style="width: 100%; height: 800px;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
 </div>

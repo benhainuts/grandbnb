@@ -30,24 +30,24 @@ file = URI.parse("https://res.cloudinary.com/dqxytjasr/image/upload/v1741180474/
 simone.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 simone.save
 # seniors << {name:"Marcel", address:"1 avenue de la republique", city: "Le Kremlin bicetre", key_skill:"cuisine", user_id:1, age:84, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an_elderly_person_male_or_female_between_65_and_90_years_old_engaging_in_a_sporting_activity_a2ciqm.jpg"}
-marcel = Senior.create!(name:"Marcel", address:"1 avenue de la republique", city: "Le Kremlin bicetre", key_skill:"sport", user: sami, age:84)
+marcel = Senior.create!(name:"Marcel", address:"13 rue de Chabrol", city: "Paris", key_skill:"sport", user: sami, age:84)
 file = URI.parse("https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an_elderly_person_male_or_female_between_65_and_90_years_old_engaging_in_a_sporting_activity_a2ciqm.jpg").open
 marcel.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 marcel.save
 # seniors << {name:"Jeanne", address:"1 avenue de la republique", city: "Paris", key_skill:"danse", user_id:1, age:78, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an
-jeanne = Senior.create!(name:"Jeanne", address:"1 avenue de la republique", city: "Paris", key_skill:"danse", user: sami, age:78)
+jeanne = Senior.create!(name:"Jeanne", address:"25 rue de Rivoli", city: "Paris", key_skill:"danse", user: sami, age:78)
 file = URI.parse("https://media.istockphoto.com/id/1448395809/fr/photo/une-femme-%C3%A2g%C3%A9e-dansant-avec-ses-amis-dans-une-salle-de-danse.jpg?s=1024x1024&w=is&k=20&c=cNssjIx2f2thTicTMj3YRIXyVbqOTN32c5uWTv3QmWQ=").open
 jeanne.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 jeanne.save
 
 
 # seniors << {name:"Roger", address:"1 avenue de la republique", city: "Marseille", key_skill:"danse", user_id:2, age:78, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171621/plan_buste_dune_personne_agee_homme_ou_femme_entre_65_et_90_ans_2_js1br5.jpg"}
-roger = Senior.create!(name:"Roger", address:"1 avenue de la republique", city: "Marseille", key_skill:"danse", user: juliette, age:78)
+roger = Senior.create!(name:"Roger", address:"5 rue du Beffroi", city: "Narbonne", key_skill:"danse", user: juliette, age:78)
 file = URI.parse("https://res.cloudinary.com/dqxytjasr/image/upload/v1741171621/plan_buste_dune_personne_agee_homme_ou_femme_entre_65_et_90_ans_2_js1br5.jpg").open
 roger.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 roger.save
 # seniors << {name:"Marie", address:"1 avenue de la republique", city: "Paris", key_skill:"cuisine", user_id:2, age:82, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an_elderly_person_aged_between_65_and_90_performing_a_karate_jump_xfotv5.jpg"}
-marie = Senior.create!(name:"Marie", address:"1 avenue de la republique", city: "Paris", key_skill:"cuisine", user: juliette, age:82)
+marie = Senior.create!(name:"Marie", address:"6 avenue du Blanchissage", city: "Avignon", key_skill:"cuisine", user: juliette, age:82)
 file = URI.parse("https://media.istockphoto.com/id/500674888/fr/photo/femme-%C3%A2g%C3%A9e-faire-cuire-au-four.jpg?s=1024x1024&w=is&k=20&c=LJthipiDkOitFuQ-p0z8_DZ-qipzvA9asXcyDT4rPUg=").open
 marie.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 marie.save
