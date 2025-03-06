@@ -21,12 +21,15 @@
     <%= @senior.summary %>
   </p>
 
+  <a href="" id="request_booking" class="btn btn-primary">Réserver un moment avec <%=@senior.name%><a>
+  <div id="request_form" class="d-none">
   <%= simple_form_for [@senior, @booking] do |f| %>
    <%= f.input :datetime,
             as: :string,
             input_html: { data: { controller: "datetimepicker" } } %>
-    <%= f.submit "Réserver un créneau", class: "btn btn-primary" %>
+    <%= f.submit "Valider la demande", class: "btn btn-primary" %>
   <% end %>
+  </div>
 
   <div class="retour">
     <%= link_to "Retour aux résultats", seniors_path%>
