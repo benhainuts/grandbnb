@@ -1,6 +1,6 @@
 
-<div class="container">
-<div class="senior-card">
+<div class="container-show">
+<div class="senior-card-show">
   <h1>
     <%=@senior.name%> - <%=@senior.age%>
   </h1>
@@ -23,17 +23,17 @@
             input_html: { data: { controller: "datetimepicker" } } %>
   <%= f.submit "Book a date", class: "btn btn-primary" %>
 <% end %>
-
-</div>
-
 <div class="retour">
 <%= link_to "Retour aux résultats", seniors_path%>
 </div>
 
+</div>
 
 
 
-<div class="map">
+
+
+<div class="map-container-show">
 
 <div style="width: 100%; height: 400px;"
   data-controller="map"

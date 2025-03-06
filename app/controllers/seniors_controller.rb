@@ -14,7 +14,9 @@ before_action :set_senior, only:[:show]
     @markers = [
       {
         lat: @senior.latitude,
-        lng: @senior.longitude
+        lng: @senior.longitude,
+        info_window_html: render_to_string(partial: "info_window"),
+        marker_html: render_to_string(partial: "marker")
       }
     ]
     end

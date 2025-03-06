@@ -1,67 +1,43 @@
-// .container {
-//   width: 90%;
-//   max-width: 1400px;
-//   padding-top: 50px;
-//   };
-
-//   .retour {
-//   padding-top: 10px;
-// }
-
-// .map-container {
-//   width: 40%;
-// }
-
-// .senior-container {
-//   width: 400px;
-//   margin: auto;
-//   text-align: center;
-// }
+.container-show {
+  width: 90%;
+  max-width: 1400px;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: row; /* Affichage en ligne (horizontalement) */
+  justify-content: center; /* Centre les éléments horizontalement */
+  align-items: center; /* Aligne les éléments verticalement */
+  gap: 20px; /* Ajoute un espace entre les blocs */
+}
 
 
-// .retour a {
-//   text-decoration: none;
-//   color: black;
-// }
+.senior-card-show {
+  width: 40%;
+  margin: auto;
+  text-align: center;
+}
 
-// // .p {
-//   color:red
-// }
+.map-container-show {
+  width: 35%;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+.rounded-logo {
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(255, 105, 180, 0.5);
+  border-radius: 50%;
+}
 
-// .container {
-//   width: 90%;
-//   max-width: 1400px;
-//   padding-top: 50px;
-//   display: flex;
-//   flex-direction: row; /* Affichage en ligne (horizontalement) */
-//   justify-content: center; /* Centre les éléments horizontalement */
-//   align-items: center; /* Aligne les éléments verticalement */
-//   gap: 20px; /* Ajoute un espace entre les blocs */
-// }
+.mapboxgl-popup {
+  max-width: 100px;
+}
 
-// .map-container {
-//   width: 60%; /* Ajuste la taille de la carte */
-//   height: 500px; /* Ajuste la hauteur */
-// }
-
-// .senior-container {
-//   width: 400px;
-//   text-align: center;
-// }
-
-// .container {
-//   display: flex; flex-direction: row;
-
-
-
-// }
-
-// .senior-card {
-//   width: 40%;
-//   margin: auto;
-//   text-align: center;
-// }
-
-// .map {
-//   width: 40%;
-// }
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  background: rgba(240, 240, 240, 0.7); /* Gris clair avec transparence */
+  border-radius: 8px; /* Coins légèrement arrondis */
+  padding: 10px;
+  backdrop-filter: blur(5px); /* Effet flou pour un rendu plus propre */
+  border: 1px solid rgba(200, 200, 200, 0.5);
+}
