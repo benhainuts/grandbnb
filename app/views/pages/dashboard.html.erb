@@ -1,7 +1,7 @@
 
 <!-- Seniors Section -->
 <div class="container">
-  <h2>My Seniors</h2>
+  <h2>Mes seniors</h2>
   <div class="row">
     <% @seniors.each do |senior| %>
       <div class="card-dashboard">
@@ -25,7 +25,7 @@
 
 <!-- Upcoming Bookings Section -->
 <div class="container">
-  <h2>My Upcoming Bookings</h2>
+  <h2>Mes réservations</h2>
   <ul>
     <% @bookings.each do |booking| %>
       <li><%= booking.datetime.strftime("%B %d, %Y at %I:%M %p") %></li>
@@ -35,7 +35,7 @@
 
 <!-- Navigation Link -->
 <div class="container dashboard-link">
-  <%= link_to "Go to Seniors", seniors_path, class: "btn btn-primary" %>
+  <%= link_to "Retour aux seniors", seniors_path, class: "btn btn-primary" %>
 </div>
 
 <!-- Extra spacing -->
