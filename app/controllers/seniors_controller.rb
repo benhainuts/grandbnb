@@ -4,16 +4,20 @@ before_action :set_senior, only:[:show]
   def index
     @seniors = Senior.all
     # The `geocoded` scope filters only flats with coordinates
-    @markers = @seniors.geocoded.map do |senior|
-      {
-        lat: senior.latitude,
-        lng: senior.longitude
-      }
-    end
+
   end
 
   def show
     @booking = @senior.bookings.new
+
+    if @senior.geocoded?
+    @markers = [
+      {
+        lat: @senior.latitude,
+        lng: @senior.longitude
+      }
+    ]
+    end
   end
 
   def new

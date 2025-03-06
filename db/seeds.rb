@@ -9,27 +9,9 @@
 #   end
 require "open-uri"
 
-<<<<<<< HEAD
-
-####DELETE AVANT
-
-
-puts "creation des seniors"
-Senior.create(name:"Gérard", address:"16 villa gaudelet", city: "paris", key_skill:"bricolage", user_id:"1", age:74, photo:"")
-Senior.create(name:"Simone", address:"16 villa gaudelet", city: "paris", key_skill:"ufc", user_id:"1", age:74, photo:"")
-Senior.create(name:"Gautier", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1", age:74, photo:"")
-Senior.create(name:"Sylvie", address:"16 villa gaudelet", city: "paris", key_skill:"krav maga", user_id:"1", age:74, photo:"")
-Senior.create(name:"Geargette", address:"16 villa gaudelet", city: "paris", key_skill:"street fighter", user_id:"1", age:74, photo:"")
-Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"cusine", user_id:"1", age:74, photo:"")
-Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"balades en foret", user_id:"1", age:74, photo:"")
-Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"course a pied", user_id:"1", age:74, photo:"")
-Senior.create(name:"georges", address:"16 villa gaudelet", city: "paris", key_skill:"L.O.L", user_id:"1", age:74, photo:"")
-puts 'création des seniors finie'
-=======
 Senior.destroy_all
 Booking.destroy_all
 User.destroy_all
->>>>>>> master
 
 puts "crea users"
 sami = User.create(email:"sami@test.com", password:"sami01")
