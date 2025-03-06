@@ -9,13 +9,13 @@
 #   end
 require "open-uri"
 
-Senior.destroy_all
 Booking.destroy_all
+Senior.destroy_all
 User.destroy_all
 
 puts "crea users"
 sami = User.create(email:"sami@test.com", password:"sami01")
-juliette = User.create(email:"juliette@test.com", password:"juliette")
+juliette = User.create(email:"juliette@test.com", password:"bababa")
 cedric = User.create(email:"cedric@test.com", password:"cedric")
 benoit = User.create(email:"benoit@test.com", password:"benoit")
 puts"users créés"
@@ -31,16 +31,16 @@ simone.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 simone.save
 
 # seniors << {name:"Bérénice", address:"1 avenue de la republique", city: "Le Kremlin bicetre", key_skill:"cuisine", user_id:1, age:84, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an_elderly_person_male_or_female_between_65_and_90_years_old_engaging_in_a_sporting_activity_a2ciqm.jpg"}
-Bérénice = Senior.create!(name:"Bérénice", address:"1 avenue de la republique", city: "Le Kremlin bicetre", key_skill:"Photographie", user: sami, age:84, summary:"Hello je suis Bérénice, j'ai 84 ans et je suis une passionnée de photographie. J'ai pratiqué la photographie pendant de nombreuses années et j'aimerais partager ma passion avec vous. J'aime rencontrer de nouvelles personnes alors j'espère vous voir bientôt pour partager un moment de photographie ensemble.")
+berenice = Senior.create!(name:"Bérénice", address:"1 avenue de la republique", city: "Le Kremlin bicetre", key_skill:"Photographie", user: sami, age:84, summary:"Hello je suis Bérénice, j'ai 84 ans et je suis une passionnée de photographie. J'ai pratiqué la photographie pendant de nombreuses années et j'aimerais partager ma passion avec vous. J'aime rencontrer de nouvelles personnes alors j'espère vous voir bientôt pour partager un moment de photographie ensemble.")
 file = URI.parse("https://images.unsplash.com/photo-1422015347944-9dd46d16bd0b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzl8fGVsZGVybHl8ZW58MHx8MHx8fDA%3D").open
-Bérénice.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-Bérénice.save
+berenice.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+berenice.save
 
 # seniors << {name:"Inaya", address:"1 avenue de la republique", city: "Paris", key_skill:"danse", user_id:1, age:78, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/an
-Inaya = Senior.create!(name:"Inaya", address:"5 Boulevard Aragon", city: "Paris", key_skill:"Danse", user: sami, age:78, summary:"Hello, je suis Inaya, j'ai 78 ans et je suis une passionnée de danse. J'ai pratiqué la danse cumbia pendant de nombreuses années et j'aimerais partager ma passion avec vous. J'aime rencontrer de nouvelles personnes alors j'espère vous voir bientôt pour partager un moment de danse ensemble.")
+inaya = Senior.create!(name:"Inaya", address:"5 Boulevard Aragon", city: "Paris", key_skill:"Danse", user: sami, age:78, summary:"Hello, je suis Inaya, j'ai 78 ans et je suis une passionnée de danse. J'ai pratiqué la danse cumbia pendant de nombreuses années et j'aimerais partager ma passion avec vous. J'aime rencontrer de nouvelles personnes alors j'espère vous voir bientôt pour partager un moment de danse ensemble.")
 file = URI.parse("https://media.istockphoto.com/id/1448395809/fr/photo/une-femme-%C3%A2g%C3%A9e-dansant-avec-ses-amis-dans-une-salle-de-danse.jpg?s=1024x1024&w=is&k=20&c=cNssjIx2f2thTicTMj3YRIXyVbqOTN32c5uWTv3QmWQ=").open
-Inaya.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
-Inaya.save
+inaya.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+inaya.save
 
 
 # seniors << {name:"Roger", address:"1 avenue de la republique", city: "Marseille", key_skill:"danse", user_id:2, age:78, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171621/plan_buste_dune_personne_agee_homme_ou_femme_entre_65_et_90_ans_2_js1br5.jpg"}
@@ -56,7 +56,6 @@ marie.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 marie.save
 
 # seniors << {name:"Armand", address:"11 rue Barye", city: "Paris", key_skill:"judo", user_id:2, age:70, photo_url:"https://res.cloudinary.com/dqxytjasr/image/upload/v1741171605/an_elderly_person_male_or_female_between_65_and_90_years_old_engaging_in_an_activity_t2k34j.jpg"}
-=======
 armand = Senior.create!(name:"Armand", address:"11 rue Barye", city: "Paris", key_skill:"Judo", user: juliette, age:70, summary:"Hello, ici Armand, 70 ans. J'ai pratiqué le judo pendant de nombreuses années et j'aimerais partager ma passion avec vous. Je suis très sociable et j'aime rencontrer de nouvelles personnes. N'hésitez pas à me contacter pour un cours de judo.")
 file = URI.parse("https://media.istockphoto.com/id/485696308/fr/photo/joyeux-senior-dans-un-kimono-blanc-blanc-avec-une-ceinture.jpg?s=1024x1024&w=is&k=20&c=vVVT5DLW5LyxIKem35u57ODurEFYjfobjasCvO00hyc=").open
 armand.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
