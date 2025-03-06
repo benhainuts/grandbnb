@@ -1,6 +1,6 @@
 
-<div class="container">
-<div class="senior-container">
+<div class="container-show">
+<div class="senior-card-show">
   <h1>
     <%=@senior.name%> - <%=@senior.age%>
   </h1>
@@ -17,17 +17,36 @@
     <p>No photo available</p>
   <% end %>
 
+  <p>
+    <%= @senior.summary %>
+  </p>
+
   <%= simple_form_for [@senior, @booking] do |f| %>
    <%= f.input :datetime,
             as: :string,
             input_html: { data: { controller: "datetimepicker" } } %>
-  <%= f.submit "Book a date", class: "btn btn-primary" %>
+  <%= f.submit "Réserver un créneau", class: "btn btn-primary" %>
 <% end %>
-
 <div class="retour">
 <%= link_to "Retour aux résultats", seniors_path%>
 </div>
+
+</div>
+
+
+
+
+
+<div class="map-container-show">
+
+<div style="width: 100%; height: 400px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+</div>
+</div>
 <div style="height: 300px">
 </div>
-</div>
+
 </div>
