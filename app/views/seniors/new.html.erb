@@ -3,28 +3,25 @@
 
 <div class="auth-container">
   <h2>Inscription</h2>
-  <h3>Bienvenue sur Grandbnb</h3>
 
   <div class="auth-form">
-
-<%= simple_form_for @senior do |f| %>
-  <%= f.input :name %>
-  <%= f.input :age %>
-  <%= f.input :address %>
-  <%= f.input :city %>
-  <%= f.input :key_skill %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
-
+    <%= simple_form_for @senior do |f| %>
+      <%= f.input :name, label: "Prénom", placeholder: "Entrez un prénom" %>
+      <%= f.input :age, label: "Age", placeholder: "Entrez un âge" %>
+      <%= f.input :address, label: "Adresse", placeholder: "Entrez une adresse" %>
+      <%= f.input :city, label: "Ville", placeholder: "Entrez une ville"%>
+      <%= f.input :key_skill, label: "Passion", placeholder: "Entrez une passion" %>
+      <%= f.input :summary, label: "Description", placeholder: "Entrez une description" %>
+      <%= f.input :photo, as: :file %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
   </div>
 
-<div class="retour">
-<%= link_to "Cancel", seniors_path%>
-</div>
-
+  <div class="retour">
+    <%= link_to "Annulation", seniors_path%>
   </div>
+
   <div style="height: 300px">
-</div>
+  </div>
 
 </div>

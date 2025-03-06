@@ -56,6 +56,6 @@ private
   end
 
   def senior_params
-    params.require(:senior).permit(:name, :age, :address, :key_skill, :city, :photo)
+    params.require(:senior).permit(:name, :age, :address, :key_skill, :city, :photo, :summary)
   end
 end

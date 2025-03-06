@@ -17,11 +17,15 @@
     <p>No photo available</p>
   <% end %>
 
+  <p>
+    <%= @senior.summary %>
+  </p>
+
   <%= simple_form_for [@senior, @booking] do |f| %>
    <%= f.input :datetime,
             as: :string,
             input_html: { data: { controller: "datetimepicker" } } %>
-  <%= f.submit "Book a date", class: "btn btn-primary" %>
+  <%= f.submit "Réserver un créneau", class: "btn btn-primary" %>
 <% end %>
 <div class="retour">
 <%= link_to "Retour aux résultats", seniors_path%>
