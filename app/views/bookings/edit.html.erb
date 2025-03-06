@@ -1,0 +1,34 @@
+<div class="container">
+<div class="senior-container">
+  <h1>
+    le <%=@booking.datetime.strftime("%B %d, %Y at %I:%M %p")%>
+    entre <%=@senior.name%> et <%=@booking.user.email%>
+  </h1>
+
+  <h2>
+
+      at <%= @senior.address %>, in <%= @senior.city %>
+
+  </h2>
+
+  <p>Passion de <%=@senior.name%>: <%=@senior.key_skill%></p>
+
+  <% if @senior.photo.present? %>
+    <%= cl_image_tag @senior.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <p>No photo available</p>
+  <% end %>
+
+  <div>
+   <%= simple_form_for [@senior, @booking] do |f| %>
+    <%= f.input :status, label: "Confirmation du rendez vous", as: :select, collection: ["à confirmer", "Confirmé", "Annulé"] %>
+    <%= f.button :submit, "Appliquer", class: "btn btn-primary" %>
+  <% end %>
+  </div>
+
+
+<div class="retour">
+<%= link_to "Retour", dashboard_path%>
+</div>
+</div>
+</div>
