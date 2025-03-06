@@ -1,30 +1,42 @@
-<h1>My dashboard</h1>
 
-<div>
-<div>
-<h2>My seniors</h2>
-<ul>
-<% @seniors.each do |senior|%>
-<li>
-<%= link_to senior.name, senior_path(senior) %>
-</li>
-<%end%>
-</ul>
+<!-- Seniors Section -->
+<div class="container">
+  <h2>My Seniors</h2>
+  <div class="row">
+    <% @seniors.each do |senior| %>
+      <div class="card-dashboard">
+        <%= link_to senior_path(senior), class: "card-dashboard-link" do %>
+          <% if senior.photo.attached? %>
+            <img src="<%= senior.photo.url %>" alt="<%= senior.name %>'s photo">
+          <% else %>
+            <img src="https://via.placeholder.com/150" alt="Default Senior Image">
+          <% end %>
+          <div class="card-dashboard-infos">
+            <h2><%= senior.name %></h2>
+            <p><strong>Age:</strong> <%= senior.age %></p>
+            <p><strong>City:</strong> <%= senior.city %></p>
+            <p><strong>Skill:</strong> <%= senior.key_skill %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
-<div>
-<h2>My upcoming bookings</h2>
-<ul>
-<% @bookings.each do |booking| %>
-<li>
-<%= booking.date %>
-</li>
-<% end %>
+<!-- Upcoming Bookings Section -->
+<div class="container">
+  <h2>My Upcoming Bookings</h2>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li><%= booking.datetime.strftime("%B %d, %Y at %I:%M %p") %></li>
+    <% end %>
+  </ul>
 </div>
 
-<div>
-<%= link_to "Go to seniors", seniors_path%>
+<!-- Navigation Link -->
+<div class="container dashboard-link">
+  <%= link_to "Go to Seniors", seniors_path, class: "btn btn-primary" %>
 </div>
 
-
-</div>
+<!-- Extra spacing -->
+<div style="height: 300px;"></div>

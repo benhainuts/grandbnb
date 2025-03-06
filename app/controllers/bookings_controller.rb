@@ -8,7 +8,7 @@ def create
 
   if @booking.save
 
-    redirect_to @senior, notice: 'Booking added successfully!'
+    redirect_to dashboard_path, notice: 'Booking added successfully!'
   else
     render 'seniors/show', status: :unprocessable_entity
   end
@@ -21,7 +21,7 @@ def set_senior
 end
 
 def booking_params
-  params.require(:booking).permit(:date, :content)
+  params.require(:booking).permit(:date, :datetime, :content)
 end
 
 end
