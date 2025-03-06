@@ -9,13 +9,13 @@
 #   end
 require "open-uri"
 
-Senior.destroy_all
 Booking.destroy_all
+Senior.destroy_all
 User.destroy_all
 
 puts "crea users"
 sami = User.create(email:"sami@test.com", password:"sami01")
-juliette = User.create(email:"juliette@test.com", password:"juliette")
+juliette = User.create(email:"juliette@test.com", password:"bababa")
 cedric = User.create(email:"cedric@test.com", password:"cedric")
 benoit = User.create(email:"benoit@test.com", password:"benoit")
 puts"users créés"
@@ -34,6 +34,7 @@ berenice = Senior.create!(name:"Bérénice", address:"1 avenue de la republiqu
 file = URI.parse("https://images.unsplash.com/photo-1422015347944-9dd46d16bd0b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzl8fGVsZGVybHl8ZW58MHx8MHx8fDA%3D").open
 berenice.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 berenice.save
+
 
 inaya = Senior.create!(name:"Inaya", address:"5 Boulevard Aragon", city: "Paris", key_skill:"Danse", user: sami, age:78, summary:"Hello, je suis Inaya, j'ai 78 ans et je suis une passionnée de danse. J'ai pratiqué la danse cumbia pendant de nombreuses années et j'aimerais partager ma passion avec vous. J'aime rencontrer de nouvelles personnes alors j'espère vous voir bientôt pour partager un moment de danse ensemble.")
 file = URI.parse("https://media.istockphoto.com/id/1448395809/fr/photo/une-femme-%C3%A2g%C3%A9e-dansant-avec-ses-amis-dans-une-salle-de-danse.jpg?s=1024x1024&w=is&k=20&c=cNssjIx2f2thTicTMj3YRIXyVbqOTN32c5uWTv3QmWQ=").open
