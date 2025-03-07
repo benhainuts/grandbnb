@@ -1,52 +1,48 @@
-
 <div class="container-show">
-<div class="senior-card-show">
-  <h1>
-    <%=@senior.name%> - <%=@senior.age%>
-  </h1>
+  <div class="senior-card-show card">
+    <div class="senior-card-content">
+      <h1 class="senior-title">
+        <%= @senior.name %> - <%= @senior.age %>
+      </h1>
 
-  <h2>
-    <i class="fa-solid"></i>
-      <%= @senior.key_skill %>
-    <i class="fa-solid"></i>
-  </h2>
+      <h2 class="senior-skill">
+        <i class="fa-solid"></i>
+        <%= @senior.key_skill %>
+        <i class="fa-solid"></i>
+      </h2>
 
-  <% if @senior.photo.present? %>
-    <%= cl_image_tag @senior.photo.key, height: 300, width: 400, crop: :fill %>
-  <% else %>
-    <p>No photo available</p>
-  <% end %>
+      <% if @senior.photo.present? %>
+        <%= cl_image_tag @senior.photo.key, class: "senior-photo" %>
+      <% else %>
+        <p class="no-photo">No photo available</p>
+      <% end %>
 
-  <p>
-    <%= @senior.summary %>
-  </p>
+      <p class="senior-summary">
+        <%= @senior.summary %>
+      </p>
 
-  <a href="" id="request_booking" class="btn btn-primary">Réserver un moment avec <%=@senior.name%><a>
-  <div id="request_form" class="d-none">
-  <%= simple_form_for [@senior, @booking] do |f| %>
-   <%= f.input :datetime,
-            as: :string,
-            input_html: { data: { controller: "datetimepicker" } } %>
-    <%= f.submit "Valider la demande", class: "btn btn-primary" %>
-  <% end %>
+      <a href="" id="request_booking" class="btn btn-primary">Réserver un moment avec <%= @senior.name %></a>
+
+      <div id="request_form" class="d-none">
+        <%= simple_form_for [@senior, @booking] do |f| %>
+          <%= f.input :datetime, as: :string, input_html: { data: { controller: "datetimepicker" } } %>
+          <%= f.submit "Valider la demande", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+
+      <div class="retour">
+        <%= link_to "Retour aux résultats", seniors_path %>
+      </div>
+    </div>
   </div>
 
-  <div class="retour">
-    <%= link_to "Retour aux résultats", seniors_path%>
-  </div>
-
-</div>
-
-
-<div class="map-container-show">
-  <div style="width: 100%; height: 400px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="map-card">
+    <div class="map-container-show"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>
 
-</div>
-
-<div style="height: 300px">
-</div>
+<div style="height: 300px"></div>
