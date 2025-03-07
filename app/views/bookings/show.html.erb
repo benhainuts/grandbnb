@@ -1,24 +1,9 @@
-<div class="container">
-<div class="senior-container">
-  <h1>
-    le <%=@booking.datetime.strftime("%B %d, %Y at %I:%M %p")%>
-    entre <%=@senior.name%> et <%=@booking.user.email%>
-  </h1>
 
-  <h2>
-      au <%= @senior.address %>, à <%= @senior.city %>
-  </h2>
+<div class="container-booking">
+  <div class="senior-card-booking">
 
-  <p>Passion de <%=@senior.name%>: <%=@senior.key_skill%></p>
-
-  <% if @senior.photo.present? %>
-    <%= cl_image_tag @senior.photo.key, height: 300, width: 400, crop: :fill %>
-  <% else %>
-    <p>No photo available</p>
-  <% end %>
-
-  <div>
-  <h3>Statut du rendez-vous : <%=@booking.status%></h3>
+    <div>
+      <h2> Rendez-vous <%=@booking.status%></h2>
     <div>
     <% if current_user == @booking.senior.user %>
     <%= link_to "Confirmer/annuler le rendez-vous", edit_senior_booking_path(@booking.senior, @booking), class: "btn btn-primary" %>
@@ -26,7 +11,28 @@
     </div>
   </div>
 
+    <div class="senior-card-bookingtop">
+  <h1 class="strong">
+    Le <%=@booking.datetime.strftime("%d/%m/%Y à %IH%M")%>
+  </h1>
 
+    <h3>
+      <%= @senior.address %>, à <%= @senior.city %>
+    </h3>
+
+  <div class="senior-passion">
+   <i class="fa-solid fa-heart fa-xl" style="color: #D70466;"></i>
+    <p>La passion de <%= @senior.name %> : <%= @senior.key_skill %></p>
+  <i class="fa-solid fa-heart fa-xl" style="color: #D70466;"></i>
+  </div>
+
+  </div>
+
+  <% if @senior.photo.present? %>
+    <%= cl_image_tag @senior.photo.key, class: "senior-photo" %>
+  <% else %>
+    <p>No photo available</p>
+  <% end %>
 
 
 <div class="retour">
