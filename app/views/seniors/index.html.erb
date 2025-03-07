@@ -1,22 +1,28 @@
-<!-- <h1>Liste des Seniors</h1> -->
+<%= render 'pages/navbarhome' %>
 
-<div class="container-index d-flex">
-  <div class="senior-wrap">
-    <div class="row w-100 d-flex">
-      <% @seniors.each do |senior| %>
-        <%= link_to senior_path(senior), class: "card-senior" do %>
-          <%= cl_image_tag senior.photo.key, height: 300, width: 400, crop: :fill %>
-          <div class="card-senior-infos">
-            <h2><%= senior.name %></h2>
-            <p><strong>Ville :</strong> <%= senior.city %></p>
-            <p><strong>Âge :</strong> <%= senior.age %> ans</p>
-            <p><strong>Skill :</strong> <%= senior.key_skill %></p>
-          </div>
+<% if flash[:alert] %>
+  <div class="alert-container">
+    <div class="alert alert-danger">
+      <%= flash[:alert] %>
+    </div>
+  </div>
+<% else %>
+  <div class="container-index d-flex">
+    <div class="senior-wrap">
+      <div class="row w-100 d-flex">
+        <% @seniors.each do |senior| %>
+          <%= link_to senior_path(senior), class: "card-senior" do %>
+            <%= cl_image_tag senior.photo.key, height: 300, width: 400, crop: :fill %>
+            <div class="card-senior-infos">
+              <h2><%= senior.name %></h2>
+              <p><strong>Ville :</strong> <%= senior.city %></p>
+              <p><strong>Âge :</strong> <%= senior.age %> ans</p>
+              <p><strong>Skill :</strong> <%= senior.key_skill %></p>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
-    </div>
-
 
     <div class="map-container-index">
       <div style="width: 100%; height: 800px;"
@@ -25,4 +31,5 @@
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
-</div>
+  </div>
+<% end %>

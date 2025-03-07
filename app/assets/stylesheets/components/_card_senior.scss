@@ -74,7 +74,7 @@
 
 .map-container-index {
   // right: 0px;
-  width: 34vw;
+  width: 40vw;
   border-radius: 10px;
   position: sticky;
   top: 5px;
@@ -96,4 +96,19 @@
 
 .senior-wrap {
   width: 70vw;
+}
+
+.alert-container {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  height: 40vh; /* Ajuste la hauteur pour être au milieu de l'écran */
+  text-align: center;
+}
+
+.alert {
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  max-width: 400px;
 }

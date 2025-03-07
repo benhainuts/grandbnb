@@ -8,10 +8,14 @@ export default class extends Controller {
     markers: Array
   }
 
+
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
-    console.log("Hello from our first Map controller");
+    console.log("Stimulus Map Controller connecté");
+    console.log("Élément Mapbox :", this.element);
 
+    // Marquer l'élément comme déjà utilisé pour éviter la duplication
+    this.element.dataset.mapInitialized = true;
 
     this.map = new mapboxgl.Map({
       container: this.element,
@@ -21,7 +25,6 @@ export default class extends Controller {
     this.#addMarkersToMap();
     this.#fitMapToMarkers();
   }
-
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
@@ -39,6 +42,7 @@ export default class extends Controller {
 }
 
   #fitMapToMarkers() {
+    console.log("Markers chargés :", this.markersValue);
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
