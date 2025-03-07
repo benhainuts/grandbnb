@@ -1,7 +1,7 @@
 <div class="container">
 <div class="senior-container">
   <h1>
-    le <%=@booking.datetime%>
+    le <%=@booking.datetime.strftime("%B %d, %Y at %I:%M %p")%>
     entre <%=@senior.name%> et <%=@booking.user.email%>
   </h1>
 
@@ -18,8 +18,12 @@
   <% end %>
 
   <div>
-  Statut du rendez-vous : <%=@booking.status%>
-  <%= link_to "Confirmer/annuler le rendez-vous", edit_senior_booking_path(@booking.senior, @booking), class: "btn btn-primary" %>
+  <h3>Statut du rendez-vous : <%=@booking.status%></h3>
+    <div>
+    <% if current_user == @booking.senior.user %>
+    <%= link_to "Confirmer/annuler le rendez-vous", edit_senior_booking_path(@booking.senior, @booking), class: "btn btn-primary" %>
+    <% end %>
+    </div>
   </div>
 
 
