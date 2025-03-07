@@ -5,7 +5,7 @@
     <% end %>
 
     <div class="search-bar">
-      <%= form_with url: seniors_path, method: :get, class: "d-flex w-100" do %>
+      <%= form_with url: seniors_path, method: :get, class: "d-flex w-100 position-relative" do %>
         <!-- Champ de recherche "Activité" -->
         <div class="search-item">
           <label>Activité</label>
@@ -17,12 +17,13 @@
           <label>Localisation</label>
           <%= text_field_tag :location, params[:location], class: "form-control", placeholder: "Où" %>
         </div>
-
-        <!-- Bouton de recherche -->
+        <div class="search-button-container">
         <button class="search-button">
           <i class="fas fa-search"></i>
         </button>
-      <% end %>
+        <% end %>
+      </div>
+        <!-- Bouton de recherche -->
     </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
