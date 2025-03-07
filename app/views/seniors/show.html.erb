@@ -1,5 +1,4 @@
 <div class="container-show">
-
   <div class="senior-card-show card">
     <div class="senior-card-content">
       <h1 class="senior-title">
@@ -22,22 +21,25 @@
         <%= @senior.summary %>
       </p>
 
+
+
       <div id="booking_request_form" data-controller="senior-booking">
-      <a href="" id="request_booking" class="btn btn-primary">Réserver un moment avec <%=@senior.name%><a>
-      <div id="request_form" class="d-none">
-      <%= simple_form_for [@senior, @booking] do |f| %>
-       <%= f.input :datetime,
-                as: :string,
-                input_html: { data: { controller: "datetimepicker" } } %>
-        <%= f.submit "Valider la demande", class: "btn btn-primary" %>
-      <% end %>
+        <a href="" id="request_booking" class="btn btn-primary">Réserver un moment avec <%= @senior.name %></a>
+        <div id="request_form" class="d-none">
+          <%= simple_form_for [@senior, @booking] do |f| %>
+            <%= f.input :datetime, as: :string, input_html: { data: { controller: "datetimepicker" } } %>
+            <%= f.submit "Valider la demande", class: "btn btn-primary" %>
+            <% end %>
+        </div>
+      </div>
+
+
+
 
       <div class="retour">
         <%= link_to "Retour aux résultats", seniors_path %>
       </div>
     </div>
-
-  </div>
   </div>
 
   <div class="map-card">
