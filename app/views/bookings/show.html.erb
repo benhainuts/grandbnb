@@ -4,17 +4,12 @@
 
     <div>
       <h2> Rendez-vous <%=@booking.status%></h2>
-    <div>
-    <% if current_user == @booking.senior.user %>
-    <%= link_to "Confirmer/annuler le rendez-vous", edit_senior_booking_path(@booking.senior, @booking), class: "btn btn-primary" %>
-    <% end %>
     </div>
-  </div>
-
+    <div style="height: 15px"></div>
     <div class="senior-card-bookingtop">
-  <h1 class="strong">
-    Le <%=@booking.datetime.strftime("%d/%m/%Y à %IH%M")%>
-  </h1>
+  <h3 class="strong">
+    Le <strong><%=@booking.datetime.strftime("%d/%m/%Y à %IH%M")%></strong>
+  </h3>
 
     <h3>
       <%= @senior.address %>, à <%= @senior.city %>
@@ -33,6 +28,11 @@
   <% else %>
     <p>No photo available</p>
   <% end %>
+   <div>
+    <% if current_user == @booking.senior.user %>
+      <%= link_to "Confirmer/annuler le rendez-vous", edit_senior_booking_path(@booking.senior, @booking), class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
 
 <div class="retour">
