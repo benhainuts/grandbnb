@@ -2,8 +2,8 @@ class BookingsController < ApplicationController
 before_action :set_senior, only: %i[create show edit update]
 before_action :set_booking, only: %i[show edit update]
 
+
 def create
-  authenticate_user!
   @booking = @senior.bookings.new(booking_params)
   @booking.user = current_user
   @booking.status = "à confirmer"

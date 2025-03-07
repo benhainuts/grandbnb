@@ -21,6 +21,7 @@
     <%= @senior.summary %>
   </p>
 
+  <div id="booking_request_form" data-controller="senior-booking">
   <a href="" id="request_booking" class="btn btn-primary">Réserver un moment avec <%=@senior.name%><a>
   <div id="request_form" class="d-none">
   <%= simple_form_for [@senior, @booking] do |f| %>
@@ -29,6 +30,7 @@
             input_html: { data: { controller: "datetimepicker" } } %>
     <%= f.submit "Valider la demande", class: "btn btn-primary" %>
   <% end %>
+  </div>
   </div>
 
   <div class="retour">
