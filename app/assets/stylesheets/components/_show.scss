@@ -1,84 +1,42 @@
-.rounded-logo {
-  width: 50px;
-  height: 50px;
-  border: px solid rgba(255, 105, 180, 0.5);
-  border-radius: 50%;
-}
-
 .container-show {
   width: 90%;
-  max-width: 1200px;
+  max-width: 1400px;
   padding-top: 50px;
   display: flex;
-  justify-content: center;
-  align-items: stretch; /* Assure que les éléments ont la même hauteur */
+  flex-direction: row; /* Affichage en ligne (horizontalement) */
+  justify-content: center; /* Centre les éléments horizontalement */
+  align-items: center; /* Aligne les éléments verticalement */
+  gap: 20px; /* Ajoute un espace entre les blocs */
 }
 
 .senior-card-show {
-  width: 40%; /* Garde la bonne largeur */
+  width: 40%;
   margin: auto;
-  padding: 20px;
-  text-align: left; /* Aligner le texte à gauche */
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 400px;
+  text-align: center;
 }
 
 .map-container-show {
   width: 35%;
   border: 1px solid #e0e0e0;
   border-radius: 5px;
-  margin-left: 20px; /* Décale la map vers la droite */
+}
+.rounded-logo {
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(255, 105, 180, 0.5);
+  border-radius: 50%;
 }
 
-.senior-card-show h1,
-.senior-card-show h2,
-.senior-card-show p {
-  text-align: left;
-  margin: 5px 0;
+.mapboxgl-popup {
+  max-width: 100px;
 }
 
-.senior-card-show h1 {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.senior-card-show h2 {
-  font-size: 20px;
-  color: #ff69b4;
-}
-
-.senior-card-show p {
-  font-size: 16px;
-  color: #555;
-}
-
-.senior-card-show img {
-  align-self: center;
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-.retour {
-  margin-top: 20px;
+.mapboxgl-popup-content {
   text-align: center;
-}
-
-.btn-primary {
-  background: #ff69b4;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.btn-primary:hover {
-  background: #ff4586;
+  font-family: "Open Sans", sans-serif;
+  background: rgba(240, 240, 240, 0.7); /* Gris clair avec transparence */
+  border-radius: 8px; /* Coins légèrement arrondis */
+  padding: 10px;
+  backdrop-filter: blur(5px); /* Effet flou pour un rendu plus propre */
+  border: 1px solid rgba(200, 200, 200, 0.5);
 }
