@@ -13,10 +13,12 @@
   </head>
 
   <body>
+  <% unless controller_name == "seniors" && action_name == "index" %>
     <%= render 'pages/navbar' %>
+  <% end %>
+
     <%= yield %>
     <%= render 'pages/footer'%>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+     <p class="alert"><%= alert %></p>
   </body>
 </html>

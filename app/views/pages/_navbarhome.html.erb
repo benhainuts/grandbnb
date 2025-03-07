@@ -1,0 +1,54 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to "/dashboard", class: "navbar-brand" do %>
+      <%= image_tag "mamielogo.png" %>
+    <% end %>
+
+    <div class="search-bar">
+      <%= form_with url: seniors_path, method: :get, class: "d-flex w-100" do %>
+        <!-- Champ de recherche "Activité" -->
+        <div class="search-item">
+          <label>Activité</label>
+          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Quoi?" %>
+        </div>
+
+        <!-- Champ de recherche "Ville" -->
+        <div class="search-item">
+          <label>Localisation</label>
+          <%= text_field_tag :location, params[:location], class: "form-control", placeholder: "Où" %>
+        </div>
+
+        <!-- Bouton de recherche -->
+        <button class="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      <% end %>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "/dashboard", class: "nav-link" do %>
+              <i class="fa-solid fa-house"></i> Mon tableau de bord
+            <% end %>
+          </li>
+
+          <%= image_tag "https://d26jy9fbi4q9wx.cloudfront.net/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBOURIQXc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--5950dc78383ab0bd5ee2bebe2dd02732bb25c162/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RTNKbGMybDZaVjkwYjE5bWFXeHNXd2hwQWNocEFjaDdCam9KWTNKdmNEb09ZWFIwWlc1MGFXOXUiLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--b67d9ded4d28d0969fbb98b4c21b79257705a99a/photo_profil.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %>
+          </div>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
