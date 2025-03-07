@@ -61,7 +61,7 @@ file = URI.parse("https://res.cloudinary.com/dqxytjasr/image/upload/v1741171620/
 svetlana.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 svetlana.save
 
-sofia = Senior.create!(name:"Sofia", address:"84 Rue Monge", city: "Paris", key_skill:"Cinema", user: cedric, age:76, summary:"Hello, je suis Sofia, j'ai 76 ans et je suis une passionnée de cinéma. J'ai travaillé dans le cinéma toute ma vie et j'aimerais partager mes connaissances avec vous. J'aime les films classiques et je suis très ouverte à découvrir de nouveaux films. A bientôt!")
+sofia = Senior.create!(name:"Sofia", address:"84 Rue Monge, Paris", city: "Paris", key_skill:"Cinema", user: cedric, age:76, summary:"Hello, je suis Sofia, j'ai 76 ans et je suis une passionnée de cinéma. J'ai travaillé dans le cinéma toute ma vie et j'aimerais partager mes connaissances avec vous. J'aime les films classiques et je suis très ouverte à découvrir de nouveaux films. A bientôt!")
 file = URI.parse("https://res.cloudinary.com/dqxytjasr/image/upload/v1741180126/photo_dune_dame_agee_qui_lit_v3jmb3.jpg").open
 sofia.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 sofia.save
@@ -101,7 +101,7 @@ file = URI.parse("https://images.unsplash.com/photo-1566616213894-2d4e1baee5d8?w
 margaret.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 margaret.save
 
-rosalinda = Senior.create!(name:"Rosalinda", address:"20 Avenue Paul Doumer", city: "Paris", key_skill:"Faire le marché", user: juliette, age:76, summary:"Hola je suis Rosalinda, 76 ans, j'ai toujours adoré faire le marché et cuisiner des plats traditionnels de mon pays El Salvador. Je serai heureuse de partager mes recettes et astuces avec vous. Hasta luego!")
+rosalinda = Senior.create!(name:"Rosalinda", address:"20 Avenue Paul Doumer, Paris", city: "Paris", key_skill:"Faire le marché", user: juliette, age:76, summary:"Hola je suis Rosalinda, 76 ans, j'ai toujours adoré faire le marché et cuisiner des plats traditionnels de mon pays El Salvador. Je serai heureuse de partager mes recettes et astuces avec vous. Hasta luego!")
 file = URI.parse("https://images.unsplash.com/photo-1521139342376-d2f8686c09b7?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzB8fGVsZGVybHl8ZW58MHx8MHx8fDA%3D").open
 rosalinda.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 rosalinda.save

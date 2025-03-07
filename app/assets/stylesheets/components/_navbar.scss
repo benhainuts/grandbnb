@@ -6,17 +6,13 @@
   flex-grow: 0;
   margin-right: 40px;
 }
-
 .navbar-lewagon .navbar-brand img {
   width: 70px;
   margin-left: 60px;
 }
-
 // .search-item {
 //   margin-right: 15px; /* Ajoute un espace entre les champs */
 // }
-
-
 .auth-container {
   max-width: 400px;
   margin: 5px auto;
@@ -99,7 +95,6 @@ select, input {
 .icon-button:hover, .menu-button:hover, .profile-button:hover {
   color: #E61E4D;
 }
-
 .search-bar {
   display: flex;
   align-items: center; /* Centre les éléments verticalement */
@@ -108,8 +103,8 @@ select, input {
   padding: 10px 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   gap: 10px; /* Espace entre les éléments */
+  width: 514px;
 }
-
 .search-item {
   margin-right: 15px; /* Espace entre les champs */
   display: flex;
@@ -118,9 +113,11 @@ select, input {
   align-items: center;
    /* Centre le contenu verticalement */
 }
-
+.search-button-container {
+  align-items: center;
+}
 .search-button {
-  background: #e61e4d;
+  background: #E61E4D;
   color: white;
   border: none;
   border-radius: 50%;
@@ -133,8 +130,10 @@ select, input {
   cursor: pointer;
   margin: 0; /* Supprimez les marges par défaut */
   border-top: 0; /* Supprimez les paddings par défaut */
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }
-
 .search-button:hover {
-  background: #d70466;
+  background: #D70466;
 }
