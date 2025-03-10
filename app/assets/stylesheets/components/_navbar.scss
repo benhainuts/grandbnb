@@ -4,11 +4,15 @@
 }
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  margin-right: 40px;
 }
 .navbar-lewagon .navbar-brand img {
   width: 70px;
   margin-left: 60px;
 }
+// .search-item {
+//   margin-right: 15px; /* Ajoute un espace entre les champs */
+// }
 .auth-container {
   max-width: 400px;
   margin: 5px auto;
@@ -73,7 +77,8 @@ select, input {
 .nav-link {
   color: #333;
   text-decoration: none;
-  margin-left: 20 px;
+  margin-right: 20px;
+  margin-top: 3px;
 }
 .navbar-right {
   display: flex;
@@ -89,4 +94,46 @@ select, input {
 }
 .icon-button:hover, .menu-button:hover, .profile-button:hover {
   color: #E61E4D;
+}
+.search-bar {
+  display: flex;
+  align-items: center; /* Centre les éléments verticalement */
+  background: #fff;
+  border-radius: 50px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  gap: 10px; /* Espace entre les éléments */
+  width: 514px;
+}
+.search-item {
+  margin-right: 15px; /* Espace entre les champs */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+   /* Centre le contenu verticalement */
+}
+.search-button-container {
+  align-items: center;
+}
+.search-button {
+  background: #E61E4D;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex; /* Utilisez flex pour centrer l'icône */
+  align-items: center; /* Centre verticalement */
+  justify-content: center; /* Centre horizontalement */
+  font-size: 18px;
+  cursor: pointer;
+  margin: 0; /* Supprimez les marges par défaut */
+  border-top: 0; /* Supprimez les paddings par défaut */
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+.search-button:hover {
+  background: #D70466;
 }

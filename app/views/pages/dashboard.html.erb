@@ -1,42 +1,109 @@
+<!-- Upcoming Bookings Section -->
 
-<!-- Seniors Section -->
-<div class="container">
-  <h2>My Seniors</h2>
-  <div class="row">
-    <% @seniors.each do |senior| %>
+<div class="rdv">
+  <h3>Mes rendez-vous confirmés</h3>
+  <div class="row-mybookings">
+    <% @bookings_accepted.each do |booking| %>
       <div class="card-dashboard">
-        <%= link_to senior_path(senior), class: "card-dashboard-link" do %>
-          <% if senior.photo.attached? %>
-            <img src="<%= senior.photo.url %>" alt="<%= senior.name %>'s photo">
+        <div class="card-dashboard-first-col">
+          <% if booking.senior.photo.attached? %>
+            <img src="<%= booking.senior.photo.url %>" alt="<%= booking.senior.name %>'s photo">
           <% else %>
-            <img src="https://via.placeholder.com/150" alt="Default Senior Image">
+            <img src="https://via.placeholder.com/100" alt="Default Senior Image">
           <% end %>
-          <div class="card-dashboard-infos">
-            <h2><%= senior.name %></h2>
-            <p><strong>Age:</strong> <%= senior.age %></p>
-            <p><strong>City:</strong> <%= senior.city %></p>
-            <p><strong>Skill:</strong> <%= senior.key_skill %></p>
-          </div>
-        <% end %>
+        </div>
+
+        <div class="card-dashboard-second-col">
+          <h3><%= booking.senior.name %></h3>
+          <p><%= booking.datetime.strftime("Le %d/%m/%Y à %IH%M") %></p>
+          <p><%= booking.senior.city %>, <%= booking.senior.address %></p>
+        </div>
+
+        <div class="card-dashboard-third-col">
+          <%= link_to "Voir le rendez-vous", senior_booking_path(booking.senior, booking), class: "btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <h3>Mes rendez-vous en attente</h3>
+  <div class="row-mybookings">
+    <% @bookings_to_be_confirmed.each do |booking| %>
+      <div class="card-dashboard">
+        <div class="card-dashboard-first-col">
+          <% if booking.senior.photo.attached? %>
+            <img src="<%= booking.senior.photo.url %>" alt="<%= booking.senior.name %>'s photo">
+          <% else %>
+            <img src="https://via.placeholder.com/100" alt="Default Senior Image">
+          <% end %>
+        </div>
+
+        <div class="card-dashboard-second-col">
+          <h3><%= booking.senior.name %></h3>
+          <p><%= booking.datetime.strftime("Le %d/%m/%Y à %IH%M") %></p>
+          <p><%= booking.senior.city %>, <%= booking.senior.address %></p>
+        </div>
+
+        <div class="card-dashboard-third-col">
+          <%= link_to "Confirmer", senior_booking_path(booking.senior, booking), class: "btn-primary" %>
+        </div>
       </div>
     <% end %>
   </div>
 </div>
 
-<!-- Upcoming Bookings Section -->
-<div class="container">
-  <h2>My Upcoming Bookings</h2>
-  <ul>
-    <% @bookings.each do |booking| %>
-      <li><%= booking.datetime.strftime("%B %d, %Y at %I:%M %p") %></li>
-    <% end %>
-  </ul>
-</div>
 
-<!-- Navigation Link -->
-<div class="container dashboard-link">
-  <%= link_to "Go to Seniors", seniors_path, class: "btn btn-primary" %>
-</div>
+<!-- My Seniors Section -->
 
-<!-- Extra spacing -->
-<div style="height: 300px;"></div>
+<div class="gp">
+  <h3>Mes grands-parents</h3>
+  <% @seniors.each do |senior| %>
+    <div class="card-mysenior-dashboard">
+      <!-- Première colonne : Photo -->
+      <div class="card-mysenior-dashboard-first-col">
+        <%= link_to senior_path(senior) do %>
+          <% if senior.photo.attached? %>
+            <img src="<%= senior.photo.url %>" alt="<%= senior.name %>'s photo">
+          <% else %>
+            <img src="https://via.placeholder.com/150" alt="Default Senior Image">
+          <% end %>
+        <% end %>
+      </div>
+
+      <!-- Deuxième colonne : Informations sur le senior -->
+      <div class="card-mysenior-dashboard-second-col">
+        <h3><%= senior.name %></h3>
+        <p><strong>Age:</strong> <%= senior.age %></p>
+        <p><strong>City:</strong> <%= senior.city %></p>
+        <p><strong>Skill:</strong> <%= senior.key_skill %></p>
+      </div>
+
+      <!-- Troisième colonne : Rendez-vous -->
+      <div class="card-mysenior-dashboard-third-col">
+        <h4>Rendez-vous à valider</h4>
+        <ul>
+          <% sbac = senior.bookings.where(status: "à confirmer").where("datetime > ?", Time.now) %>
+          <% if sbac.count == 0 %>
+            <p>Aucun rendez-vous à confirmer</p>
+          <% else %>
+            <% sbac.each do |booking| %>
+              <li><%= booking.datetime.strftime("%B %d, %Y at %I:%M %p") %> avec <%= booking.user.email %> - <%= link_to "Confirmer", senior_booking_path(booking.senior, booking), class: "btn-primary" %></li>
+            <% end %>
+          <% end %>
+        </ul>
+
+        <h4>Rendez-vous à venir</h4>
+        <ul>
+          <% sbav = senior.bookings.where(status: "Confirmé").where("datetime > ?", Time.now) %>
+          <% if sbav.count == 0 %>
+            <p>Aucun rendez-vous à venir</p>
+          <% else %>
+            <% sbav.each do |booking| %>
+              <li><%= booking.datetime.strftime("%B %d, %Y at %I:%M %p") %> avec <%= booking.user.email %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+</div>

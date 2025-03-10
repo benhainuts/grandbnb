@@ -1,0 +1,42 @@
+
+<div class="container-booking">
+  <div class="senior-card-booking">
+
+    <div>
+      <h2> Rendez-vous <%=@booking.status%></h2>
+    </div>
+    <div style="height: 15px"></div>
+    <div class="senior-card-bookingtop">
+  <h3 class="strong">
+    Le <strong><%=@booking.datetime.strftime("%d/%m/%Y à %IH%M")%></strong>
+  </h3>
+
+    <h3>
+      <%= @senior.address %>, à <%= @senior.city %>
+    </h3>
+
+  <div class="senior-passion">
+   <i class="fa-solid fa-heart fa-xl" style="color: #D70466;"></i>
+    <p>La passion de <%= @senior.name %> : <%= @senior.key_skill %></p>
+  <i class="fa-solid fa-heart fa-xl" style="color: #D70466;"></i>
+  </div>
+
+  </div>
+
+  <% if @senior.photo.present? %>
+    <%= cl_image_tag @senior.photo.key, class: "senior-photo" %>
+  <% else %>
+    <p>No photo available</p>
+  <% end %>
+   <div>
+    <% if current_user == @booking.senior.user %>
+      <%= link_to "Confirmer/annuler le rendez-vous", edit_senior_booking_path(@booking.senior, @booking), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+
+<div class="retour">
+<%= link_to "Retour", dashboard_path%>
+ </div>
+  </div>
+ </div>

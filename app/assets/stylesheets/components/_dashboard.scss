@@ -1,37 +1,36 @@
-.container {
-  width: 90%;
+/* Row for upcoming bookings */
+.rdv {
+  display: flex;
+  flex-direction: column; /* Empile les cartes verticalement */
+  gap: 20px; /* Espacement entre les cartes */
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  margin-top: 20px;
 }
 
-h1, h2 {
-  text-align: center;
-  color: #333;
+.row-mybookings {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;  /* This will center align the cards in the row */
+  width: 100%;
+  padding: 5px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-/* Grid Layout for Cards */
-.row {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  justify-items: center;
-}
-
-/* Dashboard Card Styles */
+/* Style des cartes de rendez-vous */
 .card-dashboard {
   background: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-  width: 100%;
-  max-width: 300px;
+  border-radius: 6px;
+  padding: 15px;
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
+  flex-direction: row; /* Colonnes alignées horizontalement */
+  align-items: center;
+  gap: 15px;
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  width: 100%;
+  margin-bottom: 15px; /* Espacement entre les cartes */
 
   &:hover {
     transform: translateY(-5px);
@@ -39,62 +38,210 @@ h1, h2 {
   }
 }
 
-/* Link covers entire card */
-.card-dashboard-link {
-  text-decoration: none;
-  color: inherit;
+/* Colonne 1 : Image */
+.card-dashboard-first-col {
+  flex: 1;
+  text-align: center;
 }
 
-/* Image Styling */
-.card-dashboard img {
+.card-dashboard-first-col img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
 }
 
-/* Card Info Styling */
-.card-dashboard-infos {
-  padding: 15px;
+/* Colonne 2 : Informations */
+.card-dashboard-second-col {
+  flex: 3;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  padding-left: 50px;
 }
 
-.card-dashboard h2 {
-  font-size: 20px;
+.card-dashboard-second-col h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-dashboard-second-col p {
+  font-size: 14px;
+  color: #555;
+  margin: 3px 0;
+}
+
+/* Colonne 3 : Bouton */
+.card-dashboard-third-col {
+  flex: 1;
+  text-align: right;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+
+  &:hover {
+    background: #0056b3;
+  }
+}
+
+
+
+/* Section "Mes grands-parents" */
+.gp {
+  display: flex;
+  flex-direction: column; /* Empile les cartes verticalement */
+  gap: 20px; /* Espacement entre les cartes */
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+/* Card pour chaque grand-parent */
+.card-mysenior-dashboard {
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  width: 100%;
+  margin-bottom: 20px; /* Espacement entre les cartes */
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Colonne 1 : Photo du senior */
+.card-mysenior-dashboard-first-col {
+  flex: 1;
+  text-align: center;
+}
+
+.card-mysenior-dashboard-first-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Colonne 2 : Informations sur le senior */
+.card-mysenior-dashboard-second-col {
+  flex: 2;
+  text-align: left;
+  padding-left: 50px;
+}
+
+.card-mysenior-dashboard-second-col h3 {
+  font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.card-dashboard p {
+.card-mysenior-dashboard-second-col p {
   font-size: 14px;
   margin: 5px 0;
   color: #555;
 }
 
-/* Link Style for Navigation */
-.dashboard-link {
+/* Colonne 3 : Rendez-vous */
+.card-mysenior-dashboard-third-col {
+  flex: 3;
+  text-align: left;
+  padding-left: 50px;
+}
+
+.card-mysenior-dashboard-third-col h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-mysenior-dashboard-third-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card-mysenior-dashboard-third-col li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* Boutons */
+.btn-primary {
+  display: inline-block;
+  background: #c60404;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
   text-decoration: none;
-  margin-top: 20px;
-  text-align: center;
+  font-size: 14px;
 
   &:hover {
-    text-decoration: underline;
+    background: #0056b3;
   }
 }
 
-/* Responsive Design */
+/* Responsive */
 @media screen and (max-width: 1024px) {
-  .row {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  .gp {
+    padding: 0 20px; /* Padding pour petits écrans */
+  }
+
+  .card-mysenior-dashboard {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .row {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  .card-mysenior-dashboard {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .row {
-    grid-template-columns: 1fr;
+  .gp {
+    padding: 0 10px; /* Padding ajusté pour très petits écrans */
+  }
+
+  .card-mysenior-dashboard {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .row-mybookings {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .card-dashboard {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .row-mybookings {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card-dashboard {
+    flex-direction: column;
+    align-items: center;
   }
 }
