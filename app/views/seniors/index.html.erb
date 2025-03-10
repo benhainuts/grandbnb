@@ -12,7 +12,7 @@
       <div class="row w-100 d-flex">
         <% @seniors.each do |senior| %>
           <%= link_to senior_path(senior), class: "card-senior" do %>
-            <%= cl_image_tag senior.photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag senior.photo.key, height: 300, width: 400, crop: :fill if senior.photo.present? %>
             <div class="card-senior-infos">
               <h2><%= senior.name %></h2>
               <p><strong>Ville :</strong> <%= senior.city %></p>
